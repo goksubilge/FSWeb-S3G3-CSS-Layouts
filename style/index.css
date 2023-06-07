@@ -1,1 +1,13 @@
-/* CSS stillerinizi buraya girin */
+@import url(reset.css);
+* {
+  box-sizing: border-box;
+  border: 1px solid limegreen;
+  /*border-collapse: collapse; */
+  background-color: aqua;
+}
+body {
+  background-color: tomato;
+}
+nav ul {
+  display: flex;
+}
