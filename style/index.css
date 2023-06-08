@@ -1,13 +1,76 @@
 @import url(reset.css);
+/*
 * {
   box-sizing: border-box;
-  border: 1px solid limegreen;
-  /*border-collapse: collapse; */
-  background-color: aqua;
-}
+  border: 1px solid greenyellow;
+  background-color: rgba(50, 355, 120, 0.2);
+} */
+
 body {
-  background-color: tomato;
+  background-color: rgba(241, 250, 238);
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+h1,
+h2 {
+  font-size: 2rem;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: bold;
+  color: rgba(29, 53, 87);
+}
+header {
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem 0;
 }
 nav ul {
   display: flex;
+  gap: 1rem;
+}
+nav a {
+  background-color: rgba(168, 218, 220);
+  color: rgba(29, 53, 87);
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  border-radius: 1rem;
+  text-decoration: none; /*çizgi kaldırır*/
+}
+
+nav a:hover {
+  background-color: rgba(230, 57, 70);
+  color: rgba(241, 250, 238);
+}
+
+nav a:active {
+  background-color: rgba(69, 123, 157);
+  color: aqua; /* bu ne işe yarıyor anlamadım*/
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap; /* minik detay: int-img,int-text 300px'e sığmadığı zaman (mobil uyum bu aynı zamanda) aşağıya yuvarlayacak görüntüyü. */
+  gap: 2rem;
+}
+
+.intro-img,
+.intro-text {
+  flex: 1 0 300px;
+  /* flex: 1; yazmak bir kısayoldur:
+  
+  flex-grow:1;
+  flex-shrink: 0;
+  flex-basis:auto;
+  
+  */
+  flex-basis: 300px; /* min genişliği belirler.*/
+}
+
+.intro-img img {
+  object-fit: cover; /* resmi sağdan soldan kırpar ama hep o alana sığdırır. */
+  width: 100%; /*parentının widthinin yüzde yüzünü alsın diye */
+  height: 100%; /* burda img nin üzerine gelip beklersen sana html'de neye kod yazdığını gösterir. */
 }
