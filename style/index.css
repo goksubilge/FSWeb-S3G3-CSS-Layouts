@@ -1,10 +1,10 @@
 @import url(reset.css);
-/*
+
 * {
   box-sizing: border-box;
-  border: 1px solid greenyellow;
-  background-color: rgba(50, 355, 120, 0.2);
-} */
+
+  background-color: beige;
+}
 
 body {
   background-color: rgba(241, 250, 238);
@@ -35,11 +35,11 @@ nav a {
   background-color: rgba(168, 218, 220);
   color: rgba(29, 53, 87);
   padding: 0.5rem 1rem;
-  text-transform: uppercase;
   border-radius: 1rem;
   text-decoration: none; /*çizgi kaldırır*/
 }
 
+button,
 nav a:hover {
   background-color: rgba(230, 57, 70);
   color: rgba(241, 250, 238);
@@ -53,7 +53,7 @@ nav a:active {
 main {
   display: flex;
   flex-wrap: wrap; /* minik detay: int-img,int-text 300px'e sığmadığı zaman (mobil uyum bu aynı zamanda) aşağıya yuvarlayacak görüntüyü. */
-  gap: 2rem;
+  gap: 3rem;
 }
 
 .intro-img,
@@ -66,11 +66,64 @@ main {
   flex-basis:auto;
   
   */
-  flex-basis: 300px; /* min genişliği belirler.*/
+  /* flex-basis: 300px;  min genişliği belirler.*/
 }
 
-.intro-img img {
-  object-fit: cover; /* resmi sağdan soldan kırpar ama hep o alana sığdırır. */
+.intro-img img,
+.projects-img {
+  object-fit: cover; /* BURASI ÖNEMLİ !! resmi sağdan soldan kırpar ama hep o alana sığdırır. */
   width: 100%; /*parentının widthinin yüzde yüzünü alsın diye */
   height: 100%; /* burda img nin üzerine gelip beklersen sana html'de neye kod yazdığını gösterir. */
+  object-position: center center; /* bu fotoda anlaşılmasa da bu da önemli bi detay, fotosuna göre çalışır iş görür. */
+}
+
+.intro-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 2rem;
+  padding-right: 3rem;
+}
+
+.intro-text button {
+  padding: 0.5rem 1rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  text-transform: capitalize;
+}
+
+.projects {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between; /* ÖNEMLİ ! flex kullanırken boşlukları eşit dağıtır*/
+  row-gap: 1rem; /* satırlar arasında da boşluk istiyorum. */
+  column-gap: 1rem;
+  padding: 1rem;
+}
+
+.project {
+  flex-basis: 100px; /* min 200px küçülebiir. */
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column; /* alt alta tutuyor. */
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 0.2rem;
+}
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  padding: 1rem;
+}
+
+.max-container {
+  max-width: 1000px;
+  margin: auto; /* bunu main'in içine oturan section'un projects'lerinin ortalanması içn koyduk*/
 }
