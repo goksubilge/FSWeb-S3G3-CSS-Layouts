@@ -1,11 +1,4 @@
 @import url(reset.css);
-
-* {
-  box-sizing: border-box;
-
-  background-color: beige;
-}
-
 body {
   background-color: rgba(241, 250, 238);
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
@@ -38,8 +31,8 @@ nav a {
   border-radius: 1rem;
   text-decoration: none; /*çizgi kaldırır*/
 }
-
-button,
+button a:hover,
+footer a:hover,
 nav a:hover {
   background-color: rgba(230, 57, 70);
   color: rgba(241, 250, 238);
